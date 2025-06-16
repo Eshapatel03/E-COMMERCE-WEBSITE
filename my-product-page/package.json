@@ -1,0 +1,9 @@
+{
+  "name": "my-product-page",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
