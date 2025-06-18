@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CartContext } from '../context/CartContext.jsx';
 
 function ProductGrid({ search, sortField, sortOrder, category }) {
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,7 +47,7 @@ function ProductGrid({ search, sortField, sortOrder, category }) {
 
     if (category) {
       tempProducts = tempProducts.filter(
-        p => p.category && String(p.category.id) === String(category)
+        p => p.category && p.category.name === category
       );
     }
 
@@ -101,8 +103,7 @@ function ProductGrid({ search, sortField, sortOrder, category }) {
           <div 
             className="card" 
             key={product.id}
-            onClick={() => handleProductClick(product.id)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'default' }}
           >
             <img
               src={product.images[0]}
@@ -112,15 +113,28 @@ function ProductGrid({ search, sortField, sortOrder, category }) {
                 height: '200px',
                 objectFit: 'cover',
                 borderRadius: '8px',
+                cursor: 'pointer',
               }}
+              onClick={() => handleProductClick(product.id)}
             />
-            <h3>{product.title}</h3>
+            <h3 
+              style={{ cursor: 'pointer' }} 
+              onClick={() => handleProductClick(product.id)}
+            >
+              {product.title}
+            </h3>
             <p>Price: ${product.price}</p>
             <p className="description">
               {product.description.length > 100
                 ? product.description.slice(0, 100) + '...'
                 : product.description}
             </p>
+            <button 
+              onClick={() => addToCart(product)} 
+              style={{ marginTop: '10px', padding: '8px 12px', cursor: 'pointer' }}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
@@ -180,3 +194,4 @@ function ProductGrid({ search, sortField, sortOrder, category }) {
 }
 
 export default ProductGrid;
+
