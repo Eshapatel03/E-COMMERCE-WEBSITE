@@ -1,0 +1,131 @@
+.cart-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f7fafc;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.2rem;
+  color: #666;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.cart-items {
+  flex: 2;
+}
+
+.cart-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  gap: 1.5rem;
+}
+
+.cart-product-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-product-info {
+  flex: 2;
+}
+
+.cart-product-info h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.cart-option {
+  margin-top: 0.5rem;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-quantity button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e2e8f0;
+  background: #f7fafc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-left: 2rem;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.cart-promo {
+  margin-top: 1rem;
+}
+
+.cart-promo input {
+  width: 200px;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.cart-summary {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  height: fit-content;
+}
+
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart-checkout button {
+  width: 100%;
+  padding: 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .cart-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .cart-summary {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+} 

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
+import { CartContext } from '../context/CartContext.jsx';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -8,6 +9,7 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const [mainImage, setMainImage] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const url = `https://api.escuelajs.co/api/v1/products/${id}`;
@@ -106,7 +108,7 @@ function ProductDetail() {
             )}
           </div>
 
-          <button className="add-to-cart-button">
+          <button className="add-to-cart-button" onClick={() => { addToCart(product); alert(`Added "${product.title}" to cart.`); }}>
             Add to Cart
           </button>
         </div>

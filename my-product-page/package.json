@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2"
+  }
 }
