@@ -45,20 +45,8 @@ function FilterControls({ searchTerm, setSearchTerm, sortBy, setSortBy, filterCa
         <option value="Furniture">Furniture</option>
       </select>
 
-      <select
-        onChange={(e) => {
-          setLimit(Number(e.target.value));
-        }}
-        value={limit}
-        style={{ padding: '5px', fontSize: '14px' }}
-      >
-        <option value={10}>10 per page</option>
-        <option value={20}>20 per page</option>
-        <option value={50}>50 per page</option>
-      </select>
-
       <button onClick={clearFilters} style={{ marginLeft: '10px', padding: '5px 10px', fontSize: '14px' }}>
-        Clear Filters
+        Clear Filters 
       </button>
 
       <Link to="/cart" style={{ marginLeft: '20px', textDecoration: 'none', color: 'black', fontWeight: 'bold', fontSize: '18px' }}>
@@ -87,8 +75,8 @@ function App() {
   const [limit, setLimit] = useState(10);
 
   return (
-    <CartProvider>
-      <Router>
+    <Router>
+      <CartProvider>
         <div className="App" style={{ padding: '20px' }}>
           <Header />
           <FilterControls
@@ -117,8 +105,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
-      </Router>
-    </CartProvider>
+      </CartProvider>
+    </Router>
   );
 }
 

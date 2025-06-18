@@ -1,15 +1,29 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext.jsx';
+import { AuthContext } from '../context/AuthContext.jsx';
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 
 function Cart() {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
+  const { isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   console.log('Cart contents:', cart);
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (!cart.length) {
     return <div className="cart-empty">Your cart is empty.</div>;
   }
+
+  const handleCheckout = () => {
+    if (!isLoggedIn()) {
+      navigate('/login');
+    } else {
+      // Proceed with checkout logic here
+      alert('Proceeding to checkout');
+    }
+  };
 
   return (
     <div className="cart-container">
@@ -50,7 +64,7 @@ function Cart() {
             <span>{subtotal.toFixed(2)}$</span>
           </div>
           <div className="cart-checkout">
-            <button>Checkout</button>
+            <button onClick={handleCheckout}>Checkout</button>
           </div>
         </div>
         {/* Payment icons and security info can go here */}
