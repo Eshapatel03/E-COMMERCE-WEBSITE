@@ -1,12 +1,12 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
   font-family: 'Poppins', 'Arial', sans-serif;
-=======
+}
+
 body {
   font-family: Arial, sans-serif;
->>>>>>> 82f259f (E-COMMERCE-WEBSITE)
+
   margin: 0;
   padding: 2rem;
   background: #f9f9f9;
@@ -19,10 +19,6 @@ body {
 }
 
 .search-input {
-<<<<<<< HEAD
-  
-=======
->>>>>>> 82f259f (E-COMMERCE-WEBSITE)
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -75,18 +71,38 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  cursor: default;
+  color: inherit;
+  text-decoration-skip-ink: none !important;
+  text-underline-offset: 0 !important;
+  text-decoration-thickness: 0 !important;
 }
 
 .card h3 {
   margin: 1rem 0 0.5rem;
   font-size: 1.1rem;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  cursor: pointer;
+  color: inherit;
+  text-decoration-skip-ink: none !important;
+  text-underline-offset: 0 !important;
+  text-decoration-thickness: 0 !important;
 }
 
 .card p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  cursor: default;
+  color: inherit;
+  text-decoration-skip-ink: none !important;
+  text-underline-offset: 0 !important;
+  text-decoration-thickness: 0 !important;
 }
-<<<<<<< HEAD
 
 /* New styles to align search, sort, category, pagination in a single line */
 .App > input,
@@ -100,6 +116,7 @@ body {
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
+  text-decoration: none;
 }
 
 .App > input {
@@ -264,10 +281,13 @@ body {
   cursor: pointer;
   margin-top: 1rem;
   transition:  0.3s ease;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  text-decoration-skip-ink: none !important;
+  text-underline-offset: 0 !important;
+  text-decoration-thickness: 0 !important;
 }
 
 .auth-login-card button[type="submit"]:hover {
   background: #764ba2;
 }
-=======
->>>>>>> 82f259f (E-COMMERCE-WEBSITE)
